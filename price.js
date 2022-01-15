@@ -8,9 +8,13 @@ const env = require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-app.use(cors({
-  origin: 'https://metalprice.netlify.app'
-}));
+const corsOptions ={
+   origin:'https://metalprice.netlify.app', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions));
 
 app.post("/getPrice", async function (req, res) {
     console.log("In server 2");
