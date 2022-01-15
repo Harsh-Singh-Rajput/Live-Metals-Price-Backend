@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://metalprice.netlify.app/'
+  origin: 'https://metalprice.netlify.app'
 }));
 
 app.post("/getPrice", async function (req, res) {
